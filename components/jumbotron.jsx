@@ -1,36 +1,33 @@
 import React from 'react';
 import classNames from 'classnames';
 import NavBar from '../components/nav-bar.jsx';
+import PropTypes from 'prop-types';
 
-var Jumbotron = React.createClass({
-  calculateDensity: function () {
-    var
-      ratio;
+class Jumbotron extends React.Component {
+  constructor(props) {
+    super(props);
+
+    var image = props.image;
+    if (this.calculateDensity() === 2) {
+      image = props.image2x || props.image;
+    }
+
+    this.state = {
+      image: image
+    };
+  }
+
+  calculateDensity() {
+    let ratio = 1;
 
     if (typeof window !== 'undefined' && window.devicePixelRatio > 1.5) {
       ratio = 2;
-    } else {
-      ratio = 1;
     }
 
     return ratio;
-  },
+  }
 
-  getInitialState: function () {
-    var image = this.props.image;
-    if (this.calculateDensity() === 2) {
-      image = this.props.image2x || this.props.image;
-    }
-    return {
-      image: image
-    };
-  },
-
-  propTypes: {
-    'image': React.PropTypes.string.isRequired
-  },
-
-  renderVideoJumbotron: function() {
+  renderVideoJumbotron() {
     return <div className="bg-video-wrapper">
       <div className="video-overlay"></div>
       <video autoPlay loop muted preload="auto" poster="" width="100%">
@@ -38,9 +35,9 @@ var Jumbotron = React.createClass({
         <p>Your browser doesn't support video</p>
       </video>
     </div>;
-  },
+  }
 
-  render: function() {
+  render() {
     // backgroundLines are line patterns to layer on hero banner image,
     // one at bottom left and one at top right.
     // Ordering in this array matters as CSS rules are set correspondingly
@@ -79,6 +76,10 @@ var Jumbotron = React.createClass({
       </div>
     );
   }
-});
+}
 
-module.exports = Jumbotron;
+Jumbotron.propTypes = {
+  imgage: PropTypes.string
+};
+
+export default Jumbotron;
