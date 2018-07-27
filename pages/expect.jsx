@@ -1,5 +1,6 @@
 var React = require('react');
-var Jumbotron = require('../components/jumbotron.jsx');
+
+import Jumbotron from '../components/jumbotron.jsx';
 
 const FESTIVAL_GUIDE_LINK = `https://issuu.com/mozfest/docs/mozfest_2017_festival_guide`;
 

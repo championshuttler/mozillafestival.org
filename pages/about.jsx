@@ -1,7 +1,8 @@
 var React = require('react');
-var Jumbotron = require('../components/jumbotron.jsx');
 var ImageTag = require('../components/imagetag.jsx');
 var classnames = require('classnames');
+
+import Jumbotron from '../components/jumbotron.jsx';
 
 var TimeLineItem = React.createClass({
   render: function() {
