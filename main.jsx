@@ -66,20 +66,6 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        { generateHelmet() }
-        <NotificationBar>
-          <div className="d-inline-block mr-sm-2">
-            <div className="d-inline-block emphasized">
-              October 26-28, 2018 in London, England
-            </div>
-            <div className="d-inline-block emphasized">
-              Submit your session now for MozFest 2018!
-            </div>
-          </div>
-          <div className="d-inline-block">
-            Submission deadline is August 1.
-          </div>
-        </NotificationBar>
         <Routes />
         <Footer />
       </div>
