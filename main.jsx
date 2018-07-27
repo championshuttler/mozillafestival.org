@@ -65,6 +65,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
+        { generateHelmet() }
         <Routes />
         <Footer />
       </div>
